@@ -1,0 +1,35 @@
+// SMACSS architecture
+
+@import './theme.scss';
+
+// Base rules 
+body,html{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden; // no-scroll
+    justify-content: center;
+    background-color: $primarySnow;
+    color: $primaryBlue;
+    font-family: $deepomaticFontFamily;
+}
+
+button{
+    position: relative;
+    border-radius: 3px;
+    height: 39px;
+    width: 76px;
+    background-color: $primaryBlue ;
+}
+
+// Layout
+
+
+// Module
+.trash-button{
+    width: 32px;
+    height: 32px;
+}
+
+// State
