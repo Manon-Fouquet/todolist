@@ -20,7 +20,7 @@ export default class TodoForm extends React.Component{
     render() {
         return (
             <div className='flex-row input-form overflow-hidden'>
-                <input className='form-input'   ref={(a) => this._inputElement = a} placeholder="Enter task" onChange={(e)=>this.setState({descr: e.target.value})}/>
+                <input className='form-input form-label'   ref={(a) => this._inputElement = a} placeholder="Enter task" onChange={(e)=>this.setState({descr: e.target.value})}/>
                 <img className='circle-button' src={PlusIcon} onClick={this.submitTask}/>
             </div>
         );
