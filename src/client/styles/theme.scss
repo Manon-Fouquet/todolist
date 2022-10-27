@@ -1,16 +1,30 @@
 // Primary colors
 $primaryBlue        : rgb(38, 173, 228);
 $primarySnow        : rgb(255, 255, 255);
-// Secondary colors
+
+/*  Secondary colors
+        secondary colors are used for panels on our platform and they 
+        also serve as an accent color for our designs.
+*/
 $secondaryNebulous  : rgb(49, 50, 52);
 $secondaryShark     : rgb(29, 30, 32);
+
 // Neutrals colors
 $neutralSand        : rgb(244, 244, 244);
 $neutralSilver      : rgb(122, 122, 122);
 $neutralBoulder     : rgb(122, 122, 122);
 $neutralStone       : rgb(102, 102, 102);
 $neutralTundora     : rgb(68, 68, 68);
+$neutralBlack       : rgb(0, 0, 0);
+$transparentBlack   : rgba(0,0,0,0.54);
+// State colors
+$green              :rgb(38, 228, 188);
+$orange             :rgb(228, 93, 38);
+$red                :rgb(228, 38, 78);
 
+//
 // Fonts
-$deepomaticFontFamily : 'Roboto';
-$textRegular: '16px';
+$deepomaticFontFamily: "Roboto", "Roboto-Medium", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+
+// Sizes
+$iconSize:20px;

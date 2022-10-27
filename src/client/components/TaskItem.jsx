@@ -4,18 +4,19 @@ export default class TaskItem extends React.Component{
 
     constructor(props){
         super(props);
-        this.completed = React.createRef();
-        this.descr=null;
+        this.state = {completed:this.props.completed};
     }
 
 
     render() {
         return (
-            <div>
-                <label htmlFor={this.props.id}>
-                    <input type="checkbox" id={this.props.id} /> {this.props.descr}
-                    <img className="trash-button" src={TrashIcon}/>
-                </label>
+            <div id={"task-"+this.props.id}>
+                <input type="checkbox" id={"checked-"+this.props.id} defaultChecked={this.state.completed} onClick={()=>this.state.completed = !this.state.completed} />
+                <label className='text-regular-default' htmlFor={this.props.id} id={'task-descr-'+this.props.id}>
+                   {this.props.descr} 
+                   </label>
+                <img className="trash-button" src={TrashIcon}  id={"delete-"+this.props.id} />
+               
             </div>
         );
     }
