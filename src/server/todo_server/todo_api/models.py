@@ -6,4 +6,4 @@ class Task(models.Model):
     completed = models.BooleanField()
 
     def __str__(self):
-        return f'Task #{self.id} : {self.descr} ({"completed" if self.completed else "Todo"})'
+        return f'Task "{self.descr} " has status {"completed" if self.completed else "Todo"}'
