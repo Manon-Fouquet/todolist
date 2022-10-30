@@ -11,10 +11,7 @@ export default class TodoForm extends React.Component{
     
     submitTask() {
         this.props.addTask(this.state.descr);
-    }
-
-    resetForm(){
-
+        this._inputElement.value=""
     }
 
     render() {
