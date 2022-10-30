@@ -50,11 +50,10 @@ def task_detailed(request,key_val):
             return HttpResponseBadRequest("Could not find key {} in task list".format(key_val))
     elif request.method == "PUT":
         try:
-            # Modifies a task, not used currently
             updated_task = json.loads(request.body)
             task.__dict__.update(updated_task)
             task.save()
-            return JsonResponse(updated_task, status=201) 
+            return JsonResponse(model_to_dict(task), status=201) 
         except:
             return HttpResponseBadRequest(f"Could not put task {key_val}")
     else:
