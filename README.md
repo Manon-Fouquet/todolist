@@ -13,14 +13,19 @@ npm install
 ## Running the backend server
 
 A virtual python environement is preinstalled for Windows.
-Django server will start on port 8000 by running:
 
 ```shell
 cd .\src\server\todo_server
+virtualenv env
 .\env\Scripts\activate
-python manage.py runserver
+pip install -r requirements.txt
 ```
 
+Django server will start on port 8000 by running the gollowing command from .\src\server\todo_server
+
+```shell
+python manage.py runserver
+```
 ## Running the app
 
 Open a new terminal. Webpack dev server will start on port 8081 by running:
