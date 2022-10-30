@@ -100,10 +100,19 @@ const developmentConfig = {
             cleanStaleWebpackAssets: true,
             protectWebpackAssets: false
         })
-    ]
+    ],
+    devServer: {
+        proxy: {
+            '/todo': {
+            // Django host name, no api prefix
+              target: 'http://localhost:8081',
+              router: () => 'http://localhost:8000',
+              pathRewrite: { '^/api': '' },
+            }
+      },
+    }
 };
 
- 
  
 module.exports = () => {
     let conf={}
