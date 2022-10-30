@@ -10,7 +10,7 @@ export default class TodoList extends React.Component{
         super();
         // Intermediate list mirroring the TaskItem components
         this.filterOptions=['All','Only Todo', 'Only done']
-        this.state = {display:this.filterOptions[0], taskList:[]}; 
+        this.state = {display:this.filterOptions[0], taskList:[],errorMsg:""}; 
     }
 
     componentDidMount(){
@@ -26,16 +26,16 @@ export default class TodoList extends React.Component{
         */
 
         var tasks = this.state.taskList.filter(t=>{
-            switch (this.state.display) {
-                case this.filterOptions[1]:
-                    return !t.completed
-                case this.filterOptions[2]:                    
-                    return t.completed
-                default:
-                    return true;
+                    switch (this.state.display) {
+                        case this.filterOptions[1]:
+                            return !t.completed
+                        case this.filterOptions[2]:                    
+                            return t.completed
+                        default:
+                            return true;
             }
         }).map(t=><TaskItem id={t.id} key={t.id} completed={t.completed} descr = {t.descr} updateStatus={(taskId,val)=>updateTask(this,taskId,val)} deleteMe={taskId=>deleteTask(this,taskId)}/>);
-
+        
         // Add callback addTask to TodoForm and render tasks created above. 
         // Task filtering is done on client side
         return (
@@ -50,6 +50,7 @@ export default class TodoList extends React.Component{
                     </select>
                 </div>
 
+                {this.state.errorMsg &&   <div className = "error-field">{this.state.errorMsg}</div>}
 
                 <div id='task-list'> 
                     {tasks}
