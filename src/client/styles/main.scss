@@ -2,7 +2,11 @@
 
 @import './theme.scss';
 
-// Base rules 
+/*
+    *******************
+    *   Base rules    *
+    *******************
+*/
 body,html{
     width           : 100%;
     height          : 100%;
@@ -46,8 +50,27 @@ body,html{
     color: $transparentBlack;
 }
 
+// ---- Icons and buttons ----
 
-// Layout
+.small-circle-icon{
+    width   : $iconSize;
+    height  : $iconSize;
+}
+
+.circle-button{
+    background-color: $primaryBlue ;
+    height          : $iconSize ;
+    width           : $iconSize ;
+    border-radius   : $iconSize ;
+    justify-content: center;
+}
+
+
+/*
+    *******************
+    *     Layouts     *
+    *******************
+*/
 
     .border-box{
         box-sizing: border-box;
@@ -66,6 +89,7 @@ body,html{
     .overflow-hidden{
         overflow: hidden;
     }
+
 // ---- flexbox layouts ----
 
     .flex-column{
@@ -85,33 +109,14 @@ body,html{
         align-items             : center;
     }
 
-// ---- Buttons  layout ----
 
-    .small-circle-icon{
-        width   : $iconSize;
-        height  : $iconSize;
-    }
+/*
+    *******************
+    *   Components    *
+    *******************
+*/
 
-    .circle-button{
-        background-color: $primaryBlue ;
-        height          : $iconSize ;
-        width           : $iconSize ;
-        border-radius   : $iconSize ;
-        justify-content: center;
-    }
-
-    
-    button{
-        position        : relative;
-        border-radius   : 3px;
-        height          : 39px;
-        width           : 76px;
-        background-color: $primaryBlue ;
-        color           : $primarySnow;
-    }
-// Module
-
-// ---- General layout ----
+// ---- Main page ----
     #main-component{
         height: 80%;
         width: $formSize;
@@ -146,7 +151,7 @@ body,html{
     }
 
 
-// ---- Filter tasks by status  ----
+// ---- Tasks filter  ----
 
     .filter-container {
         width: 100%;
@@ -156,7 +161,7 @@ body,html{
         justify-content: right;
     }
 
-    //--------- Task Item ----------
+//--------- Task Item ----------
 
     .task{
         position        : relative;
@@ -178,8 +183,18 @@ body,html{
             position: absolute;
             left: 2 * $formPadding;
         }
+
         .task-delete{
             position: absolute;
             right: $formPadding;
         }
-// State
+
+/*
+    *******************
+    *      States     *
+    *******************
+*/
+
+    .striked{
+        text-decoration: line-through;
+    }
