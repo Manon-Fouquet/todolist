@@ -156,6 +156,30 @@ body,html{
         justify-content: right;
     }
 
-  
+    //--------- Task Item ----------
 
+    .task{
+        position        : relative;
+        border-radius   : 3px;
+        height          : 39px;
+        width           : $formSize;
+        background-color: $neutralSand  ;
+        color           : $neutralBlack;
+        margin-bottom: 1em;
+    }
+
+        .task-check-box{
+            position: absolute;
+            left: 0.5*$formPadding;
+        }
+
+        
+        .task-descr{
+            position: absolute;
+            left: 2 * $formPadding;
+        }
+        .task-delete{
+            position: absolute;
+            right: $formPadding;
+        }
 // State
