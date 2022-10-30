@@ -12,13 +12,14 @@ npm install
 
 ## Running the backend server
 
-A virtual python environement is preinstalled for Windows.
+The following commands (also in *setup_django.bat*) setup django virtual environement and the todo-list database.
 
 ```shell
 cd .\src\server\todo_server
 virtualenv env
 .\env\Scripts\activate
 pip install -r requirements.txt
+python ./manage.py migrate --run-syncdb
 ```
 
 Django server will start on port 8000 by running the gollowing command from .\src\server\todo_server
