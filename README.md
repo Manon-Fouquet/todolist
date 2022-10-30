@@ -25,6 +25,8 @@ python ./manage.py migrate --run-syncdb
 Django server will start on port 8000 by running the gollowing command from .\src\server\todo_server
 
 ```shell
+cd .\src\server\todo_server
+.\env\Scripts\activate
 python manage.py runserver
 ```
 ## Running the app
@@ -34,6 +36,8 @@ Open a new terminal. Webpack dev server will start on port 8081 by running:
 ```shell
 npm run dev
 ```
+
+Open a browser at *http://localhost:8081/*
 
 ## Usage
 

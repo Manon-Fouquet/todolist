@@ -13,7 +13,7 @@ export default class TaskItem extends React.Component{
         // NB : not really useful as the TaskItem list is rebuilt on render
         let next = !this.state.completed
         this.setState({completed: next})
-        this.props.updateStatus(this.props.id,{"descr":this.props.descr,"completed":next})
+        this.props.updateMe(this.props.id,{"descr":this.props.descr,"completed":next})
     }
 
     render() {

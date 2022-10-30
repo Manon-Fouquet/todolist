@@ -21,21 +21,26 @@ export default class TodoList extends React.Component{
         /* 
         Create a list of TaskItem components from taskList
             Add the following hooks:
-                - updateStatus : check on completed checkbox, cb from TaskItem to TodoList
+                - updateMe : check on completed checkbox, cb from TaskItem to TodoList
                 - deleteMe: click on trash icon, cb from TaskItem to TodoList
         */
-
-        var tasks = this.state.taskList.filter(t=>{
-                    switch (this.state.display) {
-                        case this.filterOptions[1]:
-                            return !t.completed
-                        case this.filterOptions[2]:                    
-                            return t.completed
-                        default:
-                            return true;
-            }
-        }).map(t=><TaskItem id={t.id} key={t.id} completed={t.completed} descr = {t.descr} updateStatus={(taskId,val)=>updateTask(this,taskId,val)} deleteMe={taskId=>deleteTask(this,taskId)}/>);
-        
+        var tasks = []
+        try{
+            tasks = this.state.taskList.filter(t=>{
+                switch (this.state.display) {
+                    case this.filterOptions[1]:
+                        return !t.completed
+                    case this.filterOptions[2]:                    
+                        return t.completed
+                    default:
+                        return true;
+        }
+        }).map(t=><TaskItem id={t.id} key={t.id} completed={t.completed} descr = {t.descr} updateMe={(taskId,val)=>updateTask(this,taskId,val)} deleteMe={taskId=>deleteTask(this,taskId)}/>);
+    
+        }catch(err){
+            // Re-render with error message
+            this.setState({taskList:[], errorMsg:"Could not retrieve tasks from the server"})
+        }
         // Add callback addTask to TodoForm and render tasks created above. 
         // Task filtering is done on client side
         return (
