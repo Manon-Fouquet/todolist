@@ -58,7 +58,7 @@ def task_detailed(request,key_val):
         except:
             return HttpResponseBadRequest(f"Could not put task {key_val}")
     else:
-        return HttpResponseBadRequest("Use DELETE or PUT with task request")
+        return HttpResponseBadRequest(f"Use DELETE or PUT with task request ({request.method} used)")
         
 
 
